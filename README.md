@@ -1,4 +1,4 @@
-# The backe add artisan commond that all user to do collected artisan or terminal command at once.
+# The package add artisan commond that allow user to do collected artisan or terminal command at once.
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/bitcodesa/deployment-script.svg?style=flat-square)](https://packagist.org/packages/bitcodesa/deployment-script)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/bitcodesa/deployment-script/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/bitcodesa/deployment-script/actions?query=workflow%3Arun-tests+branch%3Amain)
