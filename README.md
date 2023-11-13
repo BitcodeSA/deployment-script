@@ -5,7 +5,55 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/bitcodesa/deployment-script/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/bitcodesa/deployment-script/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/bitcodesa/deployment-script.svg?style=flat-square)](https://packagist.org/packages/bitcodesa/deployment-script)
 
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
+**Package Description**
+
+This package provides a convenient way to run groups of Artisan commands through a pre-defined configuration file. This
+can be useful for automating tasks such as deployment, database maintenance, and testing.
+
+**Features**
+
+* Run groups of Artisan commands with a single command
+* Override command options in the configuration file
+* Pass values to artisan commands like `--force`.
+* Run command like `git pull`.
+
+**Example**
+
+For example, to run the following commands:
+
+```
+php artisan migrate:fresh
+php artisan cache:clear
+php artisan route:cache
+```
+
+```php
+return [
+    'commands' => [
+        [
+            "type" => "artisan",
+            "command" => "migrate:fresh"
+        ],
+        [
+            "type" => "artisan",
+            "command" => "cache:clear"
+        ],
+        [
+            "type" => "artisan",
+            "command" => "route:cache"
+        ],
+    ],
+];
+```
+
+Then, you would run the following command:
+
+```
+php artisan deploy
+```
+
+This package is a valuable tool for any Laravel developer who needs to automate tasks or run groups of Artisan commands
+on a regular basis.
 
 ## Installation
 
