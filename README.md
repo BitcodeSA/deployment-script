@@ -25,25 +25,27 @@ This is the contents of the published config file:
 
 ```php
 return [
-    [
-        "type" => "console",
-        "command" => "git pull"
-    ],
-    [
-        "type" => "console",
-        "command" => "composer install --optimize-autoloader",
-    ],
-    [
-        "type" => "artisan",
-        "command" => "migrate",
-        "values" => [
-            "--force" => true
-        ]
-    ],
-    [
-        "type" => "artisan",
-        "command" => "cache:clear",
-    ],
+     "commands" => [
+        [
+            "type" => "console",
+            "command" => "git pull"
+        ],
+        [
+            "type" => "console",
+            "command" => "composer install --optimize-autoloader",
+        ],
+        [
+            "type" => "artisan",
+            "command" => "migrate",
+            "values" => [
+                "--force" => true
+            ]
+        ],
+        [
+            "type" => "artisan",
+            "command" => "cache:clear",
+        ],
+    ]
 ];
 ```
 
