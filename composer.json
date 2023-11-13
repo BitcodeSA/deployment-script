@@ -1,6 +1,7 @@
 {
     "name": "bitcodesa/deployment-script",
-    "description": "The backe add artisan commond that all user to do collected artisan or terminal command at once.",
+    "description": "The package add artisan command that all user to do collected artisan or terminal command at once.",
+    "version": "0.0.1",
     "keywords": [
         "BitcodeSA",
         "laravel",
