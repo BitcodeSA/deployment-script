@@ -1,7 +1,7 @@
 {
     "name": "bitcodesa/deployment-script",
     "description": "The package add artisan command that all user to do collected artisan or terminal command at once.",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "keywords": [
         "BitcodeSA",
         "laravel",

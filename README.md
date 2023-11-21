@@ -2,7 +2,6 @@
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/bitcodesa/deployment-script.svg?style=flat-square)](https://packagist.org/packages/bitcodesa/deployment-script)
 [![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/bitcodesa/deployment-script/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/bitcodesa/deployment-script/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/bitcodesa/deployment-script/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/bitcodesa/deployment-script/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/bitcodesa/deployment-script.svg?style=flat-square)](https://packagist.org/packages/bitcodesa/deployment-script)
 
 **Package Description**
@@ -21,7 +20,7 @@ can be useful for automating tasks such as deployment, database maintenance, and
 
 For example, to run the following commands:
 
-```
+```bash
 php artisan migrate:fresh
 php artisan cache:clear
 php artisan route:cache
@@ -97,6 +96,45 @@ return [
 ];
 ```
 
+## Allow used in production
+
+To allow used of deploy script in the *production env* you should allow it in the config
+`config/deployment-script.php`
+
+```php
+[
+// config/deployment-script.php
+"allow_in_production" => true;
+]
+```
+
+## Production Commands:
+
+you can specify commands to run only in the *production env*: put the array inside config file
+`config/deployment-script.php` then specify the key name of this array into var `production` for example:
+
+```php
+[
+// config/deployment-script.php
+"production_commands" => [
+    [
+            "type" => "artisan",
+            "command" => "migrate",
+            "values" => [
+                "--force" => true
+            ]
+        ],
+        [
+            "type" => "artisan",
+            "command" => "cache:clear",
+        ],
+    ]
+"production" => "production_commands";
+];
+```
+
+**Note:** if not specified the default commands array well be used.
+
 ## Usage
 
 ```bash
@@ -116,10 +154,6 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 ## Contributing
 
 Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
-
-## Security Vulnerabilities
-
-Please review [our security policy](../../security/policy) on how to report security vulnerabilities.
 
 ## Credits
 

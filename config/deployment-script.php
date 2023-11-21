@@ -21,5 +21,7 @@ return [
             "type" => "artisan",
             "command" => "cache:clear",
         ],
-    ]
+    ],
+    "production" => "commands",
+    "allow_in_production" => true
 ];
