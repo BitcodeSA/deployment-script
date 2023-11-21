@@ -107,7 +107,7 @@ To allow used of deploy script in the *production env* you should allow it in th
 "allow_in_production" => true;
 ]
 ```
-
+***Note:*** By default the script is not allowed in production.
 ## Production Commands:
 
 you can specify commands to run only in the *production env*: put the array inside config file
@@ -133,7 +133,7 @@ you can specify commands to run only in the *production env*: put the array insi
 ];
 ```
 
-**Note:** if not specified the default commands array well be used.
+***Note:*** if not specified the default commands array well be used.
 
 ## Usage
 
