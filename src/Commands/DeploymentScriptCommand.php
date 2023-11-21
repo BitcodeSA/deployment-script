@@ -13,9 +13,11 @@ class DeploymentScriptCommand extends Command
 
     public function handle(): int
     {
-        if (config('deployment-script.allow_in_production', false)) {
-            $this->error("Deploy Script is not allow in Production Environment");
-            return self::FAILURE;
+        if (app()->isProduction()) {
+            if (config('deployment-script.allow_in_production', false)) {
+                $this->error("Deploy Script is not allow in Production Environment");
+                return self::FAILURE;
+            }
         }
 
         foreach ($this->getCommands() as $command) {
